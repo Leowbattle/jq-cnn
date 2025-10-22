@@ -2,6 +2,8 @@ Convolutional Neural Network inference implemented in jq.
 
 Relies on this fq branch (not yet merged): https://github.com/Leowbattle/fq/tree/safetensors
 
-Train network (you must have PyTorch installed): `python3 mnist.py --save-model --epochs [n]`
+Build a docker image: `docker build -t jq-cnn .`
 
-Run on random MNIST digit: `python3 jq_cnn_driver.py`
+Train network (requires PyTorch): `python3 mnist.py --save-model --epochs [n]`
+
+Run on random MNIST digit: `docker run --rm jq-cnn`

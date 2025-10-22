@@ -66,7 +66,7 @@ def run_jq_classifier(image_json):
         
         # Command to run
         cmd = [
-            "go", "run", ".", 
+            "fq", 
             "-f", "format/safetensors/testdata/nn.jq",
             "--raw-file", "SAFETENSORS", "format/safetensors/testdata/mnist_cnn.safetensors"
         ]
