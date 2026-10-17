@@ -89,12 +89,12 @@ def main():
                         help='For Saving the current Model')
     args = parser.parse_args()
 
-    use_accel = not args.no_accel and torch.accelerator.is_available()
+    use_accel = not args.no_accel and torch.cuda.is_available()
 
     torch.manual_seed(args.seed)
 
     if use_accel:
-        device = torch.accelerator.current_accelerator()
+        device = torch.device("cuda")
     else:
         device = torch.device("cpu")
 
